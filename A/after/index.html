@@ -12,10 +12,26 @@
       content: " ->>>>";
       color: red;
     }
+
+    span[data-desc] {
+      position: relative;
+      text-decoration: underline;
+      color: #00f;
+      cursor: help;
+    }
+
+    span[data-desc]:hover:after {
+      content: attr(data-desc);
+      position: absolute;
+      left: 0;
+      top: 24px;
+      min-width: 200px;
+      border: 1px #aaa solid;
+    }
   </style>
 </head>
 <body>
-  <p class="gay-arrow">Testing</p>
+  <p class="gay-arrow">Testing <span data-desc="it's awesome">pure css tooltip</span></p>
   <p class="gay-arrow">Test again</p>
 </body>
 </html>
