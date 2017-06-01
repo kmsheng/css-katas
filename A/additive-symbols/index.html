@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>additive-symbols</title>
+  <style>
+    @counter-style additive-symbols-example {
+      system: additive;
+      additive-symbols: I 1;
+    }
+    .list {
+      list-style: additive-symbols-example;
+    }
+  </style>
+</head>
+<body>
+  <ul class="list">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+    <li>Four</li>
+    <li>Five</li>
+  </ul>
+</body>
+</html>
