@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>align-content</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container-box {
+      padding: 20px;
+      margin: 0 auto;
+      border: 1px solid #000;
+      width: 900px;
+      height: 300px;
+      display: flex;
+      justify-content: space-between;
+      /* flex-start | flex-end | center | space-between | space-around | stretch; */
+    }
+    .container {
+      width: 240px;
+      height: 200px;
+      background-color: #8c8c8c;
+      align-content: center;
+    }
+    .g1 {
+      background-color: #8cffa0;
+    }
+    .g2 {
+      background-color: #a0c8ff;
+    }
+    .g3 {
+      background-color: #ffa08c;
+    }
+    .g4 {
+      background-color: #ffff8c;
+    }
+    .g5 {
+      background-color: #ff8cff;
+    }
+    .g6 {
+      background-color: #8cffff;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 50px);
+    }
+    .container > .grid {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <select id="select-align-content">
+    <option value="normal">normal</option>
+    <option value="stretch">stretch</option>
+    <option value="flex-start">flex-start</option>
+    <option value="flex-end">flex-end</option>
+    <option value="center" selected>center</option>
+    <option value="space-between">space-between</option>
+    <option value="space-around">space-around</option>
+    <option value="space-evenly">space-evenly</option>
+
+    <option value="start">start</option>
+    <option value="end">end</option>
+    <option value="left">left</option>
+    <option value="right">right</option>
+
+    <option value="baseline">baseline</option>
+    <option value="first baseline">first baseline</option>
+    <option value="last baseline">last baseline</option>
+
+    <option value="safe center">safe center</option>
+    <option value="unsafe center">unsafe center</option>
+    <option value="safe right">safe right</option>
+    <option value="unsafe right">unsafe right</option>
+    <option value="safe end">safe end</option>
+    <option value="unsafe end">unsafe end</option>
+    <option value="safe flex-end">safe flex-end</option>
+    <option value="unsafe flex-end">unsafe flex-end</option>
+  </select>
+  <div class="container-box">
+    <div>display: flex</div>
+    <div class="container flex">
+      <div class="grid g1"></div>
+      <div class="grid g2"></div>
+      <div class="grid g3"></div>
+      <div class="grid g4"></div>
+      <div class="grid g5"></div>
+      <div class="grid g6"></div>
+    </div>
+    <div>display: grid</div>
+    <div class="container grid">
+      <div class="grid g1"></div>
+      <div class="grid g2"></div>
+      <div class="grid g3"></div>
+      <div class="grid g4"></div>
+      <div class="grid g5"></div>
+      <div class="grid g6"></div>
+    </div>
+  </div>
+  <script>
+    const selectAlignContent = document.getElementById('select-align-content');
+    const containers = Array.from(document.getElementsByClassName('container'));
+
+    selectAlignContent.addEventListener('change', (event) => {
+      const value = event.target.value;
+      containers.forEach((container) => {
+        container.style.alignContent = value;
+      });
+    });
+  </script>
+</body>
+</html>
