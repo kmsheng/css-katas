@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>align-self</title>
+  <style>
+    #container {
+      border: 1px solid #000;
+      height: 400px;
+      width: 400px;
+      display: flex;
+    }
+    #blue {
+      background-color: blue;
+      align-self: center;
+    }
+    #red {
+      background-color: red;
+    }
+    #green {
+      background-color: green;
+    }
+    .rect {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="red" class="rect"></div>
+    <div id="blue" class="rect"></div>
+    <div id="green" class="rect"></div>
+  </div>
+</body>
+</html>
