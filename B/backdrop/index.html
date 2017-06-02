@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>::backdrop</title>
+  <style>
+    /* from https://codepen.io/ricardozea/pen/bEPEPE */
+    /* all credits goes to Ricardo Zea */
+    @import url(http://fonts.googleapis.com/css?family=Archivo+Narrow:700);
+    /*Thick font*/
+    @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light+Two);
+    /*Script font*/
+    @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic);
+    /*Reading font*/
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      padding: 30px;
+      color: white;
+      text-align: center;
+      font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+      background: #34362e;
+      background-image: -webkit-radial-gradient(#34362e, #272822 80%);
+      background-image: radial-gradient(#34362e, #272822 80%);
+    }
+
+    a, a:visited {
+      color: #6d9adf;
+    }
+
+    a:hover {
+      color: #c90;
+      text-decoration: none;
+    }
+
+    hr {
+      margin: 30px auto;
+      border: none;
+      border-top: #666 1px dotted;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+      text-transform: capitalize;
+    }
+
+    ul {
+      padding-left: 15px;
+    }
+
+    li {
+      margin-bottom: 20px;
+    }
+
+    time {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    code, pre {
+      padding: 5px;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.15);
+      font: 14px Courier;
+      box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+      color: #999;
+    }
+
+    .new-window {
+      position: relative;
+      padding-right: 16px;
+    }
+    .new-window:after {
+      content: '';
+      display: block;
+      width: 11px;
+      height: 11px;
+      position: absolute;
+      top: 10%;
+      right: 0;
+      background: url(http://i.imgur.com/EAxm4BB.gif) no-repeat;
+    }
+
+    .clear:before,
+    .clear:after {
+      content: "";
+      display: table;
+    }
+
+    .clear:after {
+      clear: both;
+    }
+
+    #element {
+      border-bottom: none;
+      background: none;
+    }
+    #element:before {
+      content: 'Normal mode';
+    }
+    #element:-webkit-full-screen:before {
+      content: 'Fullscreen mode';
+    }
+    #element:-moz-full-screen:before {
+      content: 'Fullscreen mode';
+    }
+    #element:-ms-fullscreen:before {
+      content: 'Fullscreen mode';
+    }
+    #element:fullscreen:before {
+      content: 'Fullscreen mode';
+    }
+    #element:-webkit-full-screen::backdrop {
+      background: #2963BD;
+    }
+    #element:-moz-full-screen::backdrop {
+      background: #2963BD;
+    }
+    #element:-ms-fullscreen::backdrop {
+      background: #2963BD;
+    }
+    #element:fullscreen::backdrop {
+      background: #2963BD;
+    }
+    #element:-webkit-full-screen::-webkit-backdrop {
+      background: #2963BD;
+    }
+    #element:fullscreen::-webkit-backdrop {
+      background: #2963BD;
+    }
+
+    dialog {
+      width: 350px;
+      padding: 40px;
+      border: 1px solid rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      box-shadow: 0 5px 20px black;
+      top: 30%;
+    }
+
+    dialog::-webkit-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(23, 49, 17, 0.8);
+    }
+
+    dialog::backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 255, 0, 0.4);
+    }
+
+    body {
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 22px;
+      text-transform: none;
+      border-bottom: #636363 1px dotted;
+    }
+    h1 code {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #c90;
+      background: none;
+      box-shadow: none;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    code {
+      font-size: 1em;
+    }
+
+    .example-cntr {
+      max-width: 800px;
+      margin: 0 auto 50px;
+      padding: 30px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.15);
+    }
+    .example-cntr > code {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 22px;
+      color: #c90;
+      background: none;
+      box-shadow: none;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    #element {
+      border-bottom: #444 1px solid;
+      padding-bottom: 20px;
+    }
+    #element:before {
+      display: block;
+      padding: 5px 0;
+      background: #429032;
+    }
+    #element:-webkit-full-screen:before {
+      display: block;
+      padding: 5px 250px;
+      background: #c03;
+    }
+    #element:-moz-full-screen:before {
+      display: block;
+      padding: 5px 250px;
+      background: #c03;
+    }
+    #element:-ms-fullscreen:before {
+      display: block;
+      padding: 5px 250px;
+      background: #c03;
+    }
+    #element:fullscreen:before {
+      display: block;
+      padding: 5px 250px;
+      background: #c03;
+    }
+
+    button {
+      padding: 8px 15px;
+      cursor: pointer;
+      background: -webkit-linear-gradient(white, #aaa);
+      background: linear-gradient(white, #aaa);
+      border-radius: 2px;
+    }
+    button:hover {
+      background: white;
+    }
+    button:active {
+      background: -webkit-linear-gradient(#aaa, white 20%);
+      background: linear-gradient(#aaa, white 20%);
+    }
+
+    .note {
+      color: #ad8a1f;
+      font-size: 12px;
+      letter-spacing: .5px;
+    }
+
+    .notes {
+      margin-bottom: 20px;
+      padding: 20px 20px 0;
+      border: #444 1px solid;
+      border-radius: 3px;
+    }
+    .notes h2 {
+      margin: 0;
+    }
+
+    .example {
+      margin: 0 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+    .example:last-child {
+      margin-bottom: 0;
+    }
+    .example h1 {
+      border: none !important;
+      margin-bottom: 0 !important;
+    }
+    .example h2 {
+      margin-top: 0;
+    }
+
+    dialog {
+      text-align: center;
+    }
+    dialog p {
+      text-align: left;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="example-cntr backdrop">
+    <h1>CSS <code>::backdrop</code> pseudo-element</h1>
+    <p>The <code>::backdrop</code> pseudo-element is a box that the full screen element has behind it, but at the same time it sits above all other content.</p>
+    <p>It can be used together with the <code>:fullscreen</code> pseudo-class or the <code>&lt;dialog></code> HTML5 element to change the background color of the maximized screen, just in case we don’t want to go with the default black.</p>
+    <div class="notes">
+      <h2>A few notes to consider:</h2>
+      <ol>
+        <li>It’s mandatory to use double colon with the <code>::backdrop</code> pseudo- element, it doesn’t work with single colon like with other pseudo-elements.</li>
+        <li>Edge is the only one that shows any styling of the <code>::backdrop</code> pseudo-element in this demo.</li>
+        <li>Firefox 47 (<a href="https://developer.mozilla.org/en-US/Firefox/Releases/47" target="_blank" title="Links opens in a new tab">release date June 29, 2016</a>) will start supporting the <code>::backdrop</code> pseudo-element.</li>
+        <li>Also, <a href="http://caniuse.com/#search=dialog" target="_blank"
+            title="Links opens in a new tab">no current version of Firefox supports the <code>&lt;dialog></code></a> HTML5 element.</li>
+        <li>Chrome doesn’t style the <code>::backdrop</code> pseudo-element when used with the <code>:fullscreen</code> pseudo-class even though <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::backdrop#Browser_compatibility" target="_blank"
+            title="Links opens in a new tab">MDN states that Chrome does support it </a>if prefixed with <code>-webkit-</code>. This is for Example 1.</li>
+        <li>Chrome properly styles the <code>::backdrop</code> pseudo-element when used with the <code>&lt;dialog></code> HTML5 element. This is for Example 2.</li>
+        <li><a href="http://caniuse.com/#search=dialog" target="_blank"
+            title="Links opens in a new tab">Only Chrome supports the <code>&lt;dialog></code></a> HTML5 element at the moment.</li>
+        <li>No mobile device supports the <code>::backdrop</code> pseudo-element.</li>
+      </ol>
+    </div>
+    <div class="example">
+      <h2>Example 1: Using <code>:fullscreen</code></h2>
+      <h1 id="element"><span class="hide">The text is injected via CSS</span></h1>
+      <button onclick="var el = document.getElementById('element'); el.webkitRequestFullscreen();">Trigger Full Screen!</button>
+    </div>
+    <div class="example">
+      <h2>Example 2: Using <code>&lt;dialog></code></h2>
+      <dialog>
+        <h1>This is a dialog. Good job! :]</h1>
+        <p>Press <code>ESC</code> or click on Close button.</p>
+        <hr>
+        <button id="close">Close</button>
+      </dialog>
+      <button id="show">Open Dialog!</button>
+    </div>
+  </div>
+  <script>
+    //Trigger the dialog box
+    var dialog = document.querySelector('dialog');
+    document.querySelector('#show').onclick = function() {
+      dialog.showModal();
+    };
+    document.querySelector('#close').onclick = function() {
+      dialog.close();
+    };
+
+    /* More information about the <dialog> element here: http://demo.agektmr.com/dialog/  */
+  </script>
+</body>
+</html>
