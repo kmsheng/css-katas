@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>align-items</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .container {
+      width: 240px;
+      height: 200px;
+      background-color: #8c8c8c;
+      align-items: center;
+    }
+    .g1 {
+      background-color: #8cffa0;
+      height: 10px;
+    }
+    .g2 {
+      background-color: #a0c8ff;
+      height: 20px;
+    }
+    .g3 {
+      background-color: #ffa08c;
+      height: 30px;
+    }
+    .g4 {
+      background-color: #ffff8c;
+      height: 40px;
+    }
+    .g5 {
+      background-color: #ff8cff;
+      height: 50px;
+    }
+    .g6 {
+      background-color: #8cffff;
+      height: 60px;
+    }
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .container > .grid {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+  <select id="select-align-items">
+    <option value="flex-start">flex-start</option>
+    <option value="flex-end">flex-end</option>
+    <option value="center" selected>center</option>
+    <option value="baseline">baseline</option>
+    <option value="stretch">stretch</option>
+  </select>
+  <div>display: flex</div>
+  <div id="label-align-items">align-items: center</div>
+  <div id="container" class="container flex">
+    <div class="grid g1"></div>
+    <div class="grid g2"></div>
+    <div class="grid g3"></div>
+    <div class="grid g4"></div>
+    <div class="grid g5"></div>
+    <div class="grid g6"></div>
+  </div>
+  <script>
+    const selectAlignItems = document.getElementById('select-align-items');
+    const labelAlignItems = document.getElementById('label-align-items');
+    const container = document.getElementById('container');
+
+    selectAlignItems.addEventListener('change', (event) => {
+      const value = event.target.value;
+      container.style.alignContent = value;
+      labelAlignItems.innerText = `align-items: ${value}`;
+    });
+  </script>
+</body>
+</html>
