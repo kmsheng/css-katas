@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>animation</title>
+  <style>
+    @keyframes illusion {
+      0% {
+        transform: rotate(0deg);
+        width: 300px;
+        height: 300px;
+        background-color: red
+      }
+      50% {
+        transform: rotate(360deg);
+        width: 10px;
+        height: 10px;
+        background-color: blue;
+      }
+      100% {
+        transform: rotate(0deg);
+        width: 300px;
+        height: 300px;
+        background: green;
+      }
+    }
+    .box {
+      position: relative;
+      margin: 100px auto;
+      animation: 2s illusion infinite;
+      width: 50px;
+      height: 50px;
+    }
+    .piece {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: gray;
+    }
+    .soul {
+      position: absolute;
+      background-color: black;
+      width: 14px;
+      height: 14px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    .p1 {
+      top: 0;
+      left: 0;
+    }
+    .p2 {
+      top: 0;
+      right: 0;
+    }
+    .p3 {
+      bottom: 0;
+      left: 0;
+    }
+    .p4 {
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="piece p1"></div>
+    <div class="piece p2"></div>
+    <div class="piece p3"></div>
+    <div class="piece p4"></div>
+    <div class="soul"></div>
+  </div>
+</body>
+</html>
