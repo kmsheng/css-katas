@@ -4,28 +4,37 @@
   <meta charset="UTF-8">
   <title>all</title>
   <style>
+    body {
+      font-size: small;
+      background-color: #f0f0f0;
+      color: blue;
+    }
     div {
       background-color: skyblue;
       color: red;
     }
-    #initial {
+    blockquote {
+      background-color: black;
+      color: white;
+    }
+    .initial {
       all: initial;
     }
-    #inherit {
+    .inherit {
       all: inherit;
     }
-    #unset {
+    .unset {
       all: unset;
     }
-    #revert {
+    .revert {
       all: revert;
     }
   </style>
 </head>
 <body>
-  <div id="initial">initial</div>
-  <div id="inherit">inherit</div>
-  <div id="unset">unset</div>
-  <div id="revert">revert</div>
+  <div class="initial">initial <blockquote class="initial">blockquote</blockquote></div>
+  <div class="inherit">inherit <blockquote class="inherit">blockquote</blockquote></div>
+  <div class="unset">unset <blockquote class="unset">blockquote</blockquote></div>
+  <div class="revert">revert <blockquote class="revert">blockquote</blockquote></div>
 </body>
 </html>
