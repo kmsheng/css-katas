@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>animation-iteration-count</title>
+  <style>
+    @keyframes heartbeat {
+      0% {
+        width: 30px;
+        height: 30px;
+        background-color: #e74c3c;
+      }
+      50% {
+        width: 40px;
+        height: 40px;
+      }
+      100% {
+        width: 30px;
+        height: 30px;
+        background-color: #e67e22;
+      }
+    }
+    .container {
+      width: 900px;
+      margin: 20px auto;
+      text-align: center;
+    }
+    .heart {
+      animation-name: heartbeat;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      background-color: #e74c3c;
+      position: relative;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      margin: 40px;
+      transform: rotate(45deg);
+    }
+    .heart:before,
+    .heart:after {
+      animation-name: heartbeat;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      content: '';
+      height: 30px;
+      position: absolute;
+      width: 30px;
+    }
+    .heart:before {
+      top: 0;
+      left: -16px;
+    }
+    .heart:after {
+      top: -16px;
+      left: 0;
+    }
+  </style>
+</head>
+<body class="container">
+  <i class="heart"></i>
+</body>
+</html>
