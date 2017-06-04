@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>attr</title>
+  <style>
+    q {
+      position: relative;
+      cursor: pointer;
+      background-color: #eee;
+      padding: 0 7px;
+      font-weight: bold;
+    }
+    q:before,
+    q:after {
+      content: '';
+    }
+    q:before {
+      white-space: nowrap;
+      position: absolute;
+      content: attr(data-desc);
+      background: #fff3ab;
+      left: 0;
+      top: 30px;
+      padding: 7px 14px;
+      display: none;
+    }
+    q:hover:before {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <p>Hover <q data-desc="attr() helps you select an element's value by attribute name">attr()</q> to see its description. <q data-desc="oops">This</q> can be hovered, too.</p>
+</body>
+</html>
