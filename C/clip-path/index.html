@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>clip-path</title>
+  <style>
+    @keyframes circle {
+      from {
+        clip-path: circle(0);
+      }
+      to {
+        clip-path: circle(120px);
+      }
+    }
+    .circle {
+      animation: 2s infinite alternate circle;
+    }
+  </style>
+</head>
+<body>
+  <img class="circle" src="./one-punch-man.jpg" alt="one punch man" />
+</body>
+</html>
