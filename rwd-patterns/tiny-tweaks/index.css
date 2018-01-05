@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container div {
+  min-height: 150px;
+}
+
+.c1 {
+  background-color: #003476;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+}
+
+@media (min-width: 500px) {
+  .c1 {
+    padding: 20px;
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 800px) {
+  .c1 {
+    padding: 40px;
+    font-size: 2em;
+  }
+}
