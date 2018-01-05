@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Layout Shifter</title>
+  <link rel="stylesheet" href="index.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="c1" id="left-drawer">
+    </div>
+    <div class="c2" id="main-panel">
+      Click here to change view
+    </div>
+  </div>
+  <script>
+    const leftDrawer = document.getElementById('left-drawer');
+    document.getElementById('main-panel')
+      .addEventListener('click', () => {
+        if (leftDrawer.classList.contains('open')) {
+          leftDrawer.classList.remove('open');
+        }
+        else {
+          leftDrawer.classList.add('open');
+        }
+      }, false);
+  </script>
+</body>
+</html>
