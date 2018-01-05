@@ -27,6 +27,8 @@ body {
 .c1 {
   position: absolute;
   transform: translate(-250px, 0);
+  /* improve performance */
+  backface-visibility: hidden;
 }
 
 .c1.open {
